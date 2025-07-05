@@ -25,7 +25,7 @@ class EventSerializer(serializers.ModelSerializer):
 
 # 4. Booking Serializer
 class BookingSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field='username', queryset=User.objects.all())
+    user = serializers.SlugRelatedField(slug_field='fullname', queryset=User.objects.all())
     tent_category = serializers.SlugRelatedField(slug_field='name', queryset=TentCategory.objects.all())
     event = serializers.SlugRelatedField(slug_field='title', queryset=Event.objects.all())
 
